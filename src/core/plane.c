@@ -1,6 +1,5 @@
 #include <udrm/core/plane.h>
 #include <udrm/kernel_api.h>
-#include <udrm/udrm.h>
 
 uapi_handle udrm_plane_new()
 {

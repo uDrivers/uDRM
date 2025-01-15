@@ -4,25 +4,24 @@
 
 UAPI_BEGIN_DECLS
 
-struct udrm_device
-{
-	void* private;			// Driver-specific data.
-	uapi_size ref_count;	// Amount of active references to this device.
-};
+typedef void* udrm_device_handle;
 
 // Registers a device.
-uapi_status udrm_dev_register(uapi_handle dev);
+uapi_status udrm_dev_register(udrm_device_handle dev);
 
 // Unregisters a device.
-uapi_status udrm_dev_unregister(uapi_handle dev);
+uapi_status udrm_dev_unregister(udrm_device_handle dev);
 
 // Unreferences a device.
-uapi_status udrm_dev_unref(uapi_handle dev);
+uapi_status udrm_dev_ref(udrm_device_handle dev);
+
+// Unreferences a device.
+uapi_status udrm_dev_unref(udrm_device_handle dev);
 
 // Allocates a new device.
-uapi_handle udrm_dev_new();
+udrm_device_handle udrm_dev_new();
 
 // Destroys a device.
-uapi_status udrm_dev_delete(uapi_handle dev);
+uapi_status udrm_dev_delete(udrm_device_handle dev);
 
 UAPI_END_DECLS

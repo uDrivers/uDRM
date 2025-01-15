@@ -1,7 +1,7 @@
 # uDRM
 
 `uDRM` is an easy-to-port collection of device drivers for GPUs compatible with `libdrm` headers.
-The API design is very similar to that of Linux.
+It also contains a reference implementation for the Direct Rendering Manager interface.
 
 > [!Important]
 > uDRM is in early stages of development and its API may change a lot.

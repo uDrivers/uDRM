@@ -5,7 +5,7 @@ uDRM can be compiled for a freestanding environment.
 
 To add uDRM to your kernel, you have to add `include/` to the include search path.
 Then, implement all common `uAPI` functions (see `include/udrm/kernel_api.h`).
-Build and link against `src/udrm.c` and `src/udrm_*.c` for drivers.
+Build and link against `src/core/udrm.c` and `src/drivers/*.c` for drivers.
 
 If you have a custom DRM backend that you would like to use instead of the one
 provided by uDRM, don't link against `src/udrm.c`. You then have to implement

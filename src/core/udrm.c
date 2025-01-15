@@ -1,9 +1,8 @@
+#include <udrm/core/udrm.h>
 #include <udrm/kernel_api.h>
-#include <udrm/udrm.h>
 
-#include "core/device.c"
-#include "core/main.c"
-#include "core/plane.c"
+#include "device.c"
+#include "plane.c"
 
 uapi_status udrm_initialize()
 {

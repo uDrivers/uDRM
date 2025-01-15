@@ -1,4 +1,3 @@
-#include <udrm/bochs.h>
 #include <udrm/core/connector.h>
 #include <udrm/core/crtc.h>
 #include <udrm/core/device.h>
@@ -6,6 +5,7 @@
 #include <udrm/core/encoder.h>
 #include <udrm/core/mode.h>
 #include <udrm/core/plane.h>
+#include <udrm/drivers/bochs.h>
 #include <udrm/kernel_api.h>
 #include <udrm/uapi/utilities/pci.h>
 
@@ -38,7 +38,7 @@
 
 struct udrm_bochs_device
 {
-	uapi_handle dev;
+	udrm_device_handle dev;
 	uapi_handle primary_plane;
 	uapi_handle crtc;
 	uapi_handle encoder;

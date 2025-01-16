@@ -47,17 +47,21 @@ struct virtq
 	struct virtq_used* used;
 };
 
-static inline int virtq_need_event(uint16_t event_idx, uint16_t new_idx, uint16_t old_idx)
+static inline int udrm_virtq_need_event(uapi_u16 event_idx, uapi_u16 new_idx, uapi_u16 old_idx)
 {
-	return (uint16_t)(new_idx - event_idx - 1) < (uint16_t)(new_idx - old_idx);
+	return (uapi_u16)(new_idx - event_idx - 1) < (uapi_u16)(new_idx - old_idx);
 }
 
-static inline uapi_le16* virtq_used_event(struct virtq* vq)
+static inline uapi_le16* udrm_virtq_used_event(struct virtq* vq)
 {
 	return &vq->avail->ring[vq->num];
 }
 
-static inline uapi_le16* virtq_avail_event(struct virtq* vq)
+static inline uapi_le16* udrm_virtq_avail_event(struct virtq* vq)
 {
 	return (uapi_le16*)&vq->used->ring[vq->num];
 }
+
+uapi_phys_addr udrm_virtq_create(struct virtq* queue, uapi_size queue_size);
+
+void udrm_virtq_submit(struct virtq* queue, void* cmd, uapi_size cmd_size);

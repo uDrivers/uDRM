@@ -4,11 +4,9 @@
 
 UAPI_BEGIN_DECLS
 
-struct udrm_plane
-{
-};
+typedef void* udrm_plane_handle;
 
 // Creates a new plane.
-uapi_handle udrm_plane_new();
+udrm_plane_handle udrm_plane_new();
 
 UAPI_END_DECLS

@@ -16,8 +16,16 @@
 #define UAPI_WANTS_PCI
 #endif
 
+#ifndef UAPI_WANTS_PAGEALLOC
+#define UAPI_WANTS_PAGEALLOC
+#endif
+
 #ifndef UAPI_WANTS_IRQ
 #define UAPI_WANTS_IRQ
+#endif
+
+#ifndef UAPI_WANTS_VM
+#define UAPI_WANTS_VM
 #endif
 
 #include <udrm/uapi/uapi.h>

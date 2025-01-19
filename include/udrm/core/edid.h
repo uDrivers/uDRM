@@ -1,13 +1,11 @@
-#ifndef UDRM_EDID_H
-#define UDRM_EDID_H
+#pragma once
 
-#include <udrm/uapi/platform/compiler.h>
-#include <udrm/uapi/platform/types.h>
+#include <udrm/kernel_api.h>
 
 UAPI_BEGIN_DECLS
 
 // Extended Display Identification Data
-UAPI_PACKED(struct drm_edid {
+UAPI_PACKED(struct udrm_edid {
 	uapi_u8 header[8];	  // 00 FF FF FF FF FF FF 00
 
 	// Vendor & Product Identification
@@ -98,8 +96,6 @@ UAPI_PACKED(struct drm_edid {
 	uapi_u8 extension_block_count;
 	uapi_u8 checksum;
 })
-UAPI_EXPECT_SIZEOF(struct drm_edid, 0x80);
+UAPI_EXPECT_SIZEOF(struct udrm_edid, 0x80);
 
 UAPI_END_DECLS
-
-#endif
